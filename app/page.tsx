@@ -676,7 +676,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-screen bg-slate-950">
+    <div className="flex h-screen bg-black">
       {/* Sidebar */}
       <Sidebar
         documents={documents}
