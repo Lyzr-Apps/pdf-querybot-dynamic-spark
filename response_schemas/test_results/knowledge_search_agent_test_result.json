@@ -1,0 +1,30 @@
+{
+  "agent_name": "Knowledge Search Agent",
+  "agent_id": "697d2c28d36f070193f5c85e",
+  "test_message": "What are the key findings in the research documents?",
+  "expected_purpose": "research",
+  "timestamp": "2026-01-30T22:10:55.185266",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "answer": "There are no key research findings available as no relevant information was found in the searched documents.",
+      "sources": [],
+      "context_maintained": true,
+      "follow_up_suggestions": [
+        "Can you specify a particular research topic or subject area?",
+        "Would you like a summary of methods and approaches discussed in the documents?",
+        "Are there particular sections or document titles you are interested in?"
+      ],
+      "confidence": 0.0
+    },
+    "metadata": {
+      "agent_name": "Knowledge Search Agent",
+      "timestamp": "2024-06-18T16:32:16Z",
+      "documents_searched": 5,
+      "retrieval_method": "semantic"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"answer\": \"There are no key research findings available as no relevant information was found in the searched documents.\",\n    \"sources\": [],\n    \"context_maintained\": true,\n    \"follow_up_suggestions\": [\n      \"Can you specify a particular research topic or subject area?\",\n      \"Would you like a summary of methods and approaches discussed in the documents?\",\n      \"Are there particular sections or document titles you are interested in?\"\n    ],\n    \"confidence\": 0.0\n  },\n  \"metadata\": {\n    \"agent_name\": \"Knowledge Search Agent\",\n    \"timestamp\": \"2024-06-18T16:32:16Z\",\n    \"documents_searched\": 5,\n    \"retrieval_method\": \"semantic\"\n  }\n}"
+}

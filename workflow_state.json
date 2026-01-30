@@ -1,0 +1,28 @@
+{
+  "workflow_type": "single_agent",
+  "status": "complete",
+  "agents_created": 1,
+  "knowledge_bases_created": 1,
+  "agents": [
+    {
+      "name": "Knowledge Search Agent",
+      "agent_id": "697d2c28d36f070193f5c85e",
+      "type": "single",
+      "status": "created",
+      "has_knowledge_base": true,
+      "rag_id": "697d2c1647177de38546da1e",
+      "schema_saved": true,
+      "schema_file": "response_schemas/knowledge_search_agent_response.json"
+    }
+  ],
+  "knowledge_bases": [
+    {
+      "name": "User PDF Knowledge Base",
+      "rag_id": "697d2c1647177de38546da1e",
+      "rag_name": "userpdfknowledgebaseb0xi",
+      "status": "created",
+      "agents_connected": ["697d2c28d36f070193f5c85e"]
+    }
+  ],
+  "created_at": "2026-01-30T00:00:00Z"
+}

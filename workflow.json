@@ -1,0 +1,103 @@
+{
+  "workflow": {
+    "name": "Knowledge Search Workflow",
+    "description": "Single-agent workflow for semantic PDF document search with citations",
+    "type": "single_agent",
+    "nodes": [
+      {
+        "id": "user_input",
+        "type": "Input",
+        "label": "User Query",
+        "nodeCategory": "input",
+        "position": { "x": 100, "y": 200 }
+      },
+      {
+        "id": "knowledge_search_agent",
+        "type": "Agent",
+        "label": "Knowledge Search Agent",
+        "nodeCategory": "agent",
+        "position": { "x": 400, "y": 200 },
+        "agent_id": "697d2c28d36f070193f5c85e",
+        "agent_name": "Knowledge Search Agent",
+        "agent_role": "PDF Document Search Assistant",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.3,
+        "top_p": 1,
+        "has_knowledge_base": true,
+        "rag_id": "697d2c1647177de38546da1e",
+        "rag_name": "userpdfknowledgebaseb0xi"
+      },
+      {
+        "id": "response_output",
+        "type": "Output",
+        "label": "Search Results with Citations",
+        "nodeCategory": "end",
+        "position": { "x": 700, "y": 200 }
+      }
+    ],
+    "edges": [
+      {
+        "source": "user_input",
+        "target": "knowledge_search_agent"
+      },
+      {
+        "source": "knowledge_search_agent",
+        "target": "response_output"
+      }
+    ]
+  },
+  "agents": [
+    {
+      "agent_id": "697d2c28d36f070193f5c85e",
+      "name": "Knowledge Search Agent",
+      "description": "Searches uploaded PDF documents using semantic retrieval, synthesizes accurate answers with source citations, and maintains conversation context for follow-up queries",
+      "agent_role": "PDF Document Search Assistant",
+      "agent_goal": "Search uploaded PDF documents using semantic retrieval, synthesize accurate answers with source citations, and maintain conversation context for follow-up queries",
+      "provider_id": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1,
+      "agent_type": "single",
+      "trigger": "Search button or Enter key on Chat Interface",
+      "has_knowledge_base": true,
+      "rag_id": "697d2c1647177de38546da1e",
+      "rag_name": "userpdfknowledgebaseb0xi",
+      "features": [
+        {
+          "type": "KNOWLEDGE_BASE",
+          "config": {
+            "lyzr_rag": {
+              "base_url": "https://rag-prod.studio.lyzr.ai",
+              "rag_id": "697d2c1647177de38546da1e",
+              "rag_name": "userpdfknowledgebaseb0xi",
+              "params": {
+                "top_k": 5,
+                "retrieval_type": "basic",
+                "score_threshold": 0
+              }
+            }
+          }
+        },
+        {
+          "type": "MEMORY",
+          "config": {
+            "max_messages_context_count": 10
+          }
+        }
+      ],
+      "response_schema_file": "response_schemas/knowledge_search_agent_response.json"
+    }
+  ],
+  "knowledge_bases": [
+    {
+      "rag_id": "697d2c1647177de38546da1e",
+      "rag_name": "userpdfknowledgebaseb0xi",
+      "name": "User PDF Knowledge Base",
+      "description": "Knowledge base for user-uploaded PDF documents with semantic search and retrieval capabilities",
+      "agents_using": ["697d2c28d36f070193f5c85e"]
+    }
+  ],
+  "created_at": "2026-01-30T00:00:00Z",
+  "last_updated": "2026-01-30T00:00:00Z"
+}

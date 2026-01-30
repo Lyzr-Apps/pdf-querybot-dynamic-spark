@@ -1,0 +1,70 @@
+{
+  "agent_name": "Knowledge Search Agent",
+  "agent_id": "697d2c28d36f070193f5c85e",
+  "agent_purpose": "research",
+  "description": "Returns semantic search results from PDF documents with synthesized answers, source citations, confidence scores, and follow-up suggestions",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "answer": "string",
+      "sources": [
+        "any"
+      ],
+      "context_maintained": "boolean",
+      "follow_up_suggestions": [
+        "string"
+      ],
+      "confidence": "number"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string",
+      "documents_searched": "number",
+      "retrieval_method": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "answer": "There are no key research findings available as no relevant information was found in the searched documents.",
+      "sources": [],
+      "context_maintained": true,
+      "follow_up_suggestions": [
+        "Can you specify a particular research topic or subject area?",
+        "Would you like a summary of methods and approaches discussed in the documents?",
+        "Are there particular sections or document titles you are interested in?"
+      ],
+      "confidence": 0.0
+    },
+    "metadata": {
+      "agent_name": "Knowledge Search Agent",
+      "timestamp": "2024-06-18T16:32:16Z",
+      "documents_searched": 5,
+      "retrieval_method": "semantic"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-01-30T22:10:55.185767",
+  "test_message_used": "Research a sample topic for testing",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "answer": "There are no key research findings available as no relevant information was found in the searched documents.",
+      "sources": [],
+      "context_maintained": true,
+      "follow_up_suggestions": [
+        "Can you specify a particular research topic or subject area?",
+        "Would you like a summary of methods and approaches discussed in the documents?",
+        "Are there particular sections or document titles you are interested in?"
+      ],
+      "confidence": 0.0
+    },
+    "metadata": {
+      "agent_name": "Knowledge Search Agent",
+      "timestamp": "2024-06-18T16:32:16Z",
+      "documents_searched": 5,
+      "retrieval_method": "semantic"
+    }
+  },
+  "test_passed": true
+}
